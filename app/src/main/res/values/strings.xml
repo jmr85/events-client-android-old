@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Recitales</string>
+    <string name="BotonSiguiente">Siguiente</string>
+    <string name="Publicaciones">Publicaciones</string>
+    <string name="BotonRegistrarse">Registrarse</string>
+
+    <string name="Item1">Ver / Editar recitales programados</string>
+    <string name="Item2">Editar Perfil</string>
+    <string name="Item3">Cerrar Sesión</string>
+
+
+</resources>

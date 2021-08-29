@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context="com.recitales.app.RegistrarseActivity">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/registro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="Registro"
+        android:textSize="30sp"
+        />
+
+
+
+
+    <EditText
+        android:id="@+id/r_nombre"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/registro"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="left"
+        android:hint="Ingrese nombre ... "
+        android:textSize="20sp"
+        android:digits="abcdefghijklmnopqrstuvwxyzñ ABCDEFGHIJKLMNOPQRSTUVWXYZÑ "
+        android:maxLength="50" />
+
+        <EditText
+            android:id="@+id/r_apellido"
+            android:layout_width="338dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/r_nombre"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:gravity="left"
+            android:hint="Ingrese apellido..."
+            android:textSize="20sp"
+            android:digits="abcdefghijklmnopqrstuvwxyzñ ABCDEFGHIJKLMNOPQRSTUVWXYZÑ "
+            android:maxLength="50" />
+
+
+
+    <EditText
+        android:id="@+id/r_mail"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/r_apellido"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="left"
+        android:hint="Ingrese mail..."
+        android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/r_password"
+            android:layout_width="338dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/r_mail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:gravity="left"
+            android:hint="Ingrese contaseña..."
+            android:textSize="20sp"
+            android:password="true"
+
+            android:digits="abcdefghijklmnopqrstuvwxyzñABCDEFGHIJKLMNOPQRSTUVWXYZÑ1234567890"
+            />
+
+    <Button
+        android:id="@+id/btn_registrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/r_password"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="Registrar"
+        android:onClick="BotonRegistrar"
+        tools:ignore="OnClick" />
+
+    </RelativeLayout>
+
+</ScrollView>
+
+

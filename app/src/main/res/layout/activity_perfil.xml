@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context="com.recitales.app.PerfilActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/e_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="Editar Perfil"
+        android:textSize="30sp"
+        />
+
+        <TextView
+            android:id="@+id/titulo_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:text="Nombre:"
+            android:textSize="15sp"
+            android:layout_below="@id/e_perfil"
+            />
+
+
+
+        <EditText
+            android:id="@+id/e_nombre"
+            android:layout_width="338dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titulo_nombre"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:digits="abcdefghijklmnopqrstuvwxyzñ ABCDEFGHIJKLMNOPQRSTUVWXYZÑ "
+            android:maxLength="50" />
+
+        <TextView
+            android:id="@+id/titulo_apellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:text="Apellido:"
+            android:textSize="15sp"
+            android:layout_below="@id/e_nombre"
+            />
+
+        <EditText
+            android:id="@+id/e_apellido"
+            android:layout_width="338dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titulo_apellido"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:digits="abcdefghijklmnopqrstuvwxyzñ ABCDEFGHIJKLMNOPQRSTUVWXYZÑ "
+            android:maxLength="50" />
+
+        <TextView
+            android:id="@+id/titulo_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:text="Mail:"
+            android:textSize="15sp"
+            android:layout_below="@id/e_apellido"
+            />
+
+        <EditText
+            android:id="@+id/e_mail"
+            android:layout_width="338dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titulo_mail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:clickable="false"
+            android:color="@color/material_on_background_disabled"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="left"
+            android:textColor="#753A3A3A"
+
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/titulo_clave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:text="Clave:"
+            android:textSize="15sp"
+            android:layout_below="@id/e_mail"
+            />
+
+        <Button
+            android:id="@+id/btn_editar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/e_password2"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="Editar"
+            android:onClick="BotonEditar"
+            tools:ignore="OnClick" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="338dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:layout_below="@id/titulo_clave"
+            android:id="@+id/e_password2"
+            app:endIconMode="password_toggle"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="338dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:password="true"
+                android:maxLength="8"
+                android:textSize="20sp"
+                android:digits="abcdefghijklmnopqrstuvwxyzñABCDEFGHIJKLMNOPQRSTUVWXYZÑ1234567890"
+
+
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
