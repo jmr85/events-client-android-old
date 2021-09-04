@@ -11,17 +11,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.recitales.app.R;
+
 import com.recitales.app.models.ApiErrorLogin;
 import com.recitales.app.models.ApiUtilsLogin;
 import com.recitales.app.models.Login;
 import com.recitales.app.interfaces.UserServiceLogin;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
+import com.recitales.app.models.RequestLogin;
+import com.recitales.app.models.ResponseLogin;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
+
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,8 +36,8 @@ public class InicioActivity extends AppCompatActivity {
     Button btn_login;
     UserServiceLogin userServiceLogin1;
 
-    ArrayList<Login> login = new ArrayList<>();
-
+    //ArrayList<Login> login = new ArrayList<>();
+    //ResponseLogin post = new Login();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,73 +69,43 @@ public class InicioActivity extends AppCompatActivity {
     }
 
     public void doLogin(final String mail, String clave) {
-        Call call = userServiceLogin1.login(mail, clave);
-        call.enqueue(new Callback<List<Login>>() {
+        RequestLogin requestLogin = new RequestLogin(mail, clave);
+
+        Call<ResponseLogin> call = userServiceLogin1.login(requestLogin);
+        call.enqueue(new Callback<ResponseLogin>() {
             @Override
-            public void onResponse(Call<List<Login>> call, Response<List<Login>> response) {
+            public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
                 if (response.isSuccessful()) {
 
-                    if (response.body().size() == 1) {
+                    if (response.body() != null) {
+                        //String post = "";
 
 
-                        List<Login> postList = response.body();
-                        String i_idusuario = "";
-                        String n_nombre = "";
-                        String a_apellido = "";
-                        String c_clave = "";
-                        String m_mail = "";
-                        String p_publicaciones = "";
+                       //post = response.body().toString();
 
-                        for (Login post : postList) {
-                            String content = "";
-                            content += post.getIdusuario();
-                            i_idusuario = content;
+                       // String m_mail = post.getMail();
 
-                            String contentnombre = "";
-                            contentnombre += post.getNombre();
-                            n_nombre = contentnombre;
-
-                            String contentapellido = "";
-                            contentapellido += post.getApellido();
-                            a_apellido = contentapellido;
-
-                            String contentclave = "";
-                            contentclave += post.getClave();
-                            c_clave = contentclave;
-
-                            String contentmail = "";
-                            contentmail += post.getMail();
-                            m_mail = contentmail;
-
-                            String contentpublicaciones = "";
-                            contentpublicaciones += post.getPublicacion();
-                            p_publicaciones = contentpublicaciones;
-
-                        }
-
-
-                        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+                       /* SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("idusuario", i_idusuario);
+
                         editor.putString("nombre", n_nombre);
-                        editor.putString("apellido", a_apellido);
                         editor.putString("clave", c_clave);
                         editor.putString("mail", m_mail);
-                        editor.putString("publicaciones", p_publicaciones);
-                        editor.commit();
 
-                        Toast.makeText(InicioActivity.this, "Bienvenido!  " + n_nombre + "\n" + "Cargando publicaciones...", Toast.LENGTH_LONG).show();
+                        editor.commit();*/
+
+                        Toast.makeText(InicioActivity.this, "Bienvenido!  " + m_mail + "\n" + "Cargando publicaciones...", Toast.LENGTH_LONG).show();
 
 
                         Intent intent = new Intent(InicioActivity.this, PublicacionesActivity.class);
-                        intent.putExtra("mail", mail);
-                        intent.putExtra("idusuario", i_idusuario);
+                        //intent.putExtra("mail", m_mail);
+                        //intent.putExtra("idusuario", n_nombre);
 
                         startActivity(intent);
 
 
                     } else {
-                        Toast.makeText(InicioActivity.this, "Mail o contraseña incorrecta.", Toast.LENGTH_SHORT).show();
+                       Toast.makeText(InicioActivity.this, "Mail o contraseña incorrecta.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     //Toast.makeText(InicioActivity.this, "Mail o contraseña incorrecta.", Toast.LENGTH_SHORT).show();

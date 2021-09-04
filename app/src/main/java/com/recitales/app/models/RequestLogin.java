@@ -5,6 +5,13 @@ public class RequestLogin {
     private String clave;
     private String mail;
 
+
+    public RequestLogin(String mail, String clave) {
+        super();
+        this.mail = mail;
+        this.clave = clave;
+    }
+
     public String getClave() {
         return clave;
     }

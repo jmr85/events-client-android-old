@@ -2,20 +2,20 @@ package com.recitales.app.models;
 
 public class Login {
 
-    private String idusuario;
-    private String nombre;
-    private String apellido;
+   // private String idusuario;
+      private String nombre;
+  //  private String apellido;
     private String mail;
     private String clave;
-    private String publicacion;
+    //private String publicacion;
 
-    public String getIdusuario() {
+   /* public String getIdusuario() {
         return idusuario;
     }
 
     public void setIdusuario(String idusuario) {
         this.idusuario = idusuario;
-    }
+    }*/
 
     public String getNombre() {
         return nombre;
@@ -25,13 +25,13 @@ public class Login {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
+  /*  public String getApellido() {
         return apellido;
     }
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
-    }
+    }*/
 
     public String getMail() {
         return mail;
@@ -49,11 +49,11 @@ public class Login {
         this.clave = clave;
     }
 
-    public String getPublicacion() {
+ /*   public String getPublicacion() {
         return publicacion;
     }
 
     public void setPublicacion(String publicacion) {
         this.publicacion = publicacion;
-    }
+    }*/
 }

@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class ResponseLogin  implements Serializable {
     private String clave;
     private String mail;
-    private int idusuario;
+    //private int idusuario;
 
     public String getClave() {
         return clave;
@@ -23,11 +23,11 @@ public class ResponseLogin  implements Serializable {
         this.mail = mail;
     }
 
-    public int getIdusuario() {
+    /*public int getIdusuario() {
         return idusuario;
     }
 
     public void setIdusuario(int idusuario) {
         this.idusuario = idusuario;
-    }
+    }*/
 }
